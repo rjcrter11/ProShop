@@ -1,4 +1,3 @@
-import { connect } from 'http2';
 import mongoose from 'mongoose';
 
 
@@ -9,9 +8,9 @@ const connectDB = async () => {
             useNewUrlParser: true,
             useCreateIndex: true
         });
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
+        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.bold);
     } catch (error) {
-        console.error(`Error: ${error.message}`)
+        console.error(`Error: ${error.message}`.red.underline.bold)
         process.exit(1)
     };
 };
