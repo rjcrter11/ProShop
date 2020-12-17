@@ -24,6 +24,13 @@ const authUser = asyncHandler(async (req, res) => {
         throw new Error('Invalid email or password')
     }
 });
+// @desc  GET user profile
+// @route  POST /api/users/profile
+// @access  Private
+const getUserProfile = asyncHandler(async (req, res) => {
+
+    res.send('Success')
+});
 
 
-export { authUser }
+export { authUser, getUserProfile }
