@@ -67,13 +67,14 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             type: USER_DETAILS_REQUEST
         })
 
-        const { userLogin: { userInfo } } = getState()
+        const {
+            userLogin: { userInfo }
+        } = getState()
 
         const config = {
             headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
-            }
+                Authorization: `Bearer ${userInfo.token}`,
+            },
         }
         const { data } = await axios.get(`/api/users/${id}`, config);
 
