@@ -8,7 +8,7 @@ import Order from '../models/orderModel.js';
 const addOrderItems = asyncHandler(async (req, res) => {
     const {
         orderItems,
-        shippingAdress,
+        shippingAddress,
         paymentMethod,
         itemsPrice,
         taxPrice,
@@ -23,7 +23,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
         const order = new Order({
             orderItems,
             user: req.user._id,
-            shippingAdress,
+            shippingAddress,
             paymentMethod,
             itemsPrice,
             taxPrice,
